@@ -23,8 +23,8 @@ function getComputerChoice() {
   return choice;
 }
 
-function getHumanChoice() {
-  let choice = prompt("Choose between rock paper scissor");
+function getHumanChoice(str) {
+  let choice = str;
   return choice;
 }
 
@@ -46,36 +46,70 @@ function getWinner(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  let computerScore = 0;
-  let humanScore = 0;
-  function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    const result = getWinner(humanChoice, computerChoice);
-    switch (result) {
-      case "draw":
-        console.log(`you both choose the same ${humanChoice}`);
-        break;
-      case "computer":
-        console.log(`${humanChoice} loose to ${computerChoice}`);
-        computerScore++;
-        break;
-      case "human":
-        console.log(`${humanChoice} win over ${computerChoice}`);
-        humanScore++;
-        break;
-      case "problem in logic":
-        console.log("Choose between rock, paper or scissor please!");
-    }
+let computerScore = 0;
+let humanScore = 0;
+function playRound(humanChoice, computerChoice, textResult, score, winner) {
+  humanChoice = humanChoice.toLowerCase();
+  const result = getWinner(humanChoice, computerChoice);
+  switch (result) {
+    case "draw":
+      textResult.textContent = `you both choose the same ${humanChoice}`;
+      break;
+    case "computer":
+      textResult.textContent = `${humanChoice} loose to ${computerChoice}`;
+      computerScore++;
+      score.textContent = `Human ${humanScore} Computer ${computerScore}`;
+      break;
+    case "human":
+      textResult.textContent = `${humanChoice} win over ${computerChoice}`;
+      humanScore++;
+      score.textContent = `Human ${humanScore} Computer ${computerScore}`;
+      break;
+    case "problem in logic":
+      console.log("Choose between rock, paper or scissor please!");
   }
-  const numberOfRounds = 5;
-  for (let i = 0; i < numberOfRounds; i++) {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-
-    playRound(humanChoice, computerChoice);
+  if (humanScore == 5) {
+    winner.textContent = "Human win !";
+    humanScore = 0;
+    computerScore = 0;
   }
-  console.log(`you did win ${humanScore} round vs ${computerScore} round`);
+  if (computerScore == 5) {
+    winner.textContent = "Computer win ! ";
+    humanScore = 0;
+    computerScore = 0;
+  }
 }
 
-playGame();
+const gameDiv = document.getElementById("game");
+
+const rockButton = document.createElement("button");
+rockButton.textContent = "rock";
+const paperButton = document.createElement("button");
+paperButton.textContent = "paper";
+const scissorButton = document.createElement("button");
+scissorButton.textContent = "scissor";
+
+gameDiv.appendChild(rockButton);
+gameDiv.appendChild(paperButton);
+gameDiv.appendChild(scissorButton);
+
+buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    playRound(button.textContent, getComputerChoice(), result, score, winner);
+  });
+});
+
+const displayResult = document.createElement("div");
+
+const result = document.createElement("span");
+result.textContent = "Result displayed here";
+displayResult.appendChild(result);
+
+const score = document.createElement("p");
+score.textContent = `Human ${humanScore} Computer ${computerScore}`;
+displayResult.appendChild(score);
+const winner = document.createElement("p");
+displayResult.appendChild(winner);
+gameDiv.appendChild(displayResult);
