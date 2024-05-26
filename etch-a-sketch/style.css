@@ -1,0 +1,35 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+button {
+  width: 100px;
+}
+
+#container {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 960px;
+  height: 960px;
+  border: solid;
+}
+
+.row {
+  display: flex;
+  gap: 0px;
+  flex: 1 1 auto;
+}
+
+.square {
+  border: solid;
+  border-width: 1px;
+  flex: 1 1 100%;
+}
