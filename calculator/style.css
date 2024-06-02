@@ -1,0 +1,44 @@
+body {
+  height: 100vh;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #333333;
+  width: 400px;
+  height: 600px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#result {
+  background-color: white;
+  text-align: right;
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+  gap: 3px;
+}
+
+button {
+  border-style: solid;
+  border-color: black;
+  border-radius: 8px;
+  background-color: yellowgreen;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  flex-grow: 1;
+  width: calc(25% - 1.5px);
+}
+
+.double {
+  width: calc(50% - 1.5px);
+}
