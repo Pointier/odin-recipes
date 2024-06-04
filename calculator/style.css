@@ -14,11 +14,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3px;
+  padding-top: 10px;
+  font-size: 50px;
 }
 
 #result {
+  width: 380px;
+  height: 100px;
   background-color: white;
   text-align: right;
+  align-self: center;
+  border-radius: 6px;
 }
 
 .row {
@@ -37,6 +43,14 @@ button {
   font-size: 18px;
   flex-grow: 1;
   width: calc(25% - 1.5px);
+}
+
+.operator {
+  background-color: red;
+}
+
+.clear {
+  background-color: orange;
 }
 
 .double {
