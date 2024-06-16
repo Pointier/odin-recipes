@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "another_danger";
+  src: url("font/another_danger-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  height: 100svh;
+}
+
+.left {
+  position: relative;
+  color: white;
+  min-height: 750px;
+  background-image: url("img/little_dragon.jpg");
+
+  width: clamp(300px, 100%, 1500px);
+  .logo-container {
+    font-size: calc(16px + 1rem);
+    position: relative;
+    top: 150px;
+    background-color: black;
+    opacity: 0.5;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "another_danger";
+    .logo {
+      width: 80px;
+      height: auto;
+    }
+  }
+  .credit {
+    position: absolute;
+    bottom: 5px;
+    left: 30%;
+    a {
+      color: white;
+    }
+  }
+}
+
+.right {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+
+  .text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    flex: 1 1 auto;
+
+    .italic {
+      font-style: italic;
+    }
+  }
+
+  .box {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .input {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .block {
+      display: flex;
+      flex-direction: column;
+    }
+    .lineBlock {
+      display: flex;
+      gap: 50px;
+    }
+  }
+
+  .footer {
+    padding: 20px;
+    flex: 1;
+  }
+  input {
+    border: 1px solid #e5e7eb;
+  }
+  input:invalid {
+    outline: none;
+    border: 2px solid red;
+  }
+  input:focus {
+    outline: none;
+    border: 2px solid #4d79ff;
+    box-shadow: 3px 3px 3px gray;
+  }
+}
