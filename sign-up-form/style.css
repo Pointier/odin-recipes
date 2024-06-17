@@ -22,7 +22,7 @@
 
   width: clamp(300px, 100%, 1500px);
   .logo-container {
-    font-size: calc(16px + 1rem);
+    font-size: calc(50px + 1rem);
     position: relative;
     top: 150px;
     background-color: black;
@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 50px;
     font-family: "another_danger";
     .logo {
       width: 80px;
@@ -51,24 +52,14 @@
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
-
-  .text {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px;
-    flex: 1 1 auto;
-
-    .italic {
-      font-style: italic;
-    }
-  }
+  flex: 1 1 auto;
 
   .box {
-    flex: 1;
+    flex: 3;
+    display: flex;
     background-color: white;
     padding: 20px;
+    box-shadow: 5px 5px 5px gray;
   }
 
   .input {
@@ -84,15 +75,34 @@
     .lineBlock {
       display: flex;
       gap: 50px;
+      flex-wrap: wrap;
     }
   }
 
   .footer {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    flex: 1;
+    gap: 10px;
+    flex: 3;
+
+    button {
+      color: white;
+      border-radius: 6px;
+      border: 0px;
+      font-size: calc(10px + 1rem);
+      width: 250px;
+      height: 70px;
+      background-color: #596d48;
+    }
+    a {
+      color: green;
+      text-decoration: none;
+    }
   }
   input {
     border: 1px solid #e5e7eb;
+    flex: 1 1 auto;
   }
   input:invalid {
     outline: none;
@@ -102,5 +112,19 @@
     outline: none;
     border: 2px solid #4d79ff;
     box-shadow: 3px 3px 3px gray;
+  }
+}
+
+.text {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+  flex: 4;
+
+  .italic {
+    font-style: italic;
   }
 }
