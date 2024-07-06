@@ -6,11 +6,11 @@ ul {
   list-style-type: none;
 }
 
-img {
-  height: 20px;
-  width: 20px;
+input[type="text"] {
+  border-radius: 10px;
+  border: none;
+  background-color: #e2e8f0;
 }
-
 .main-container {
   display: grid;
   /*grid-template: 1fr 1fr/ 1fr 5fr;*/
@@ -30,6 +30,11 @@ img {
   gap: 15px;
 }
 
+.search {
+  width: 100px;
+  height: 100px;
+}
+
 .button {
   background-color: #1992d4;
   color: white;
@@ -42,13 +47,35 @@ img {
   grid-row: 1 / 3;
   grid-column: 1 / 2;
   background-color: #1992d4;
+  display: grid;
   color: white;
+  ul {
+    padding: 10px;
+  }
+  li {
+    margin: 10px;
+  }
 }
 
-.side-button {
+.side-button,
+.title {
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 40px 1fr;
   align-items: center;
+}
+
+.title {
+  padding: 20px;
+  font-size: 25px;
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.side-button img {
+  height: 25px;
+  width: 25px;
 }
 
 .svg {
