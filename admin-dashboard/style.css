@@ -30,6 +30,16 @@ input[type="text"] {
   gap: 15px;
 }
 
+.identity {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 30px 1fr;
+  img {
+    width: 25px;
+    height: auto;
+  }
+}
+
 .search {
   width: 100px;
   height: 100px;
