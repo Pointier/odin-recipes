@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="book.js" defer></script>
+  </head>
+  <body>
+    <dialog>
+      <form action="" method="get" id="bookForm">
+        <input id="title" type="text" placeholder="Title" />
+        <input id="author" type="text" placeholder="Author" />
+        <input id="pages" type="number" placeholder="Pages" />
+        <label for="read">Read</label>
+        <input id="read" type="checkbox" placeholder="Read" />
+        <input type="submit" value="Submit" id="submit" />
+      </form>
+    </dialog>
+    <div class="header"><button id="newBook">NEW BOOK</button></div>
+    <div class="library-container"></div>
+  </body>
+</html>
