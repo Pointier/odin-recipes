@@ -1,0 +1,21 @@
+#gameGrid {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  place-content: center;
+}
+
+.cellGrid {
+  border: solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
