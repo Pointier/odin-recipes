@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "moduleResolution": "node" // Ensure module resolution is set to node
+  },
+  "include": ["src/**/*"], // Ensure this includes your TypeScript files
+  "exclude": ["node_modules"]
+}
